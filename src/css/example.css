@@ -1,0 +1,29 @@
+body {
+  background: #FB66A8;
+}
+
+h1 {
+  font-size: 1em;
+}
+
+section {
+  width: 50%;
+  margin: 10% auto 0;
+
+  color: #fff;
+
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+
+  text-align: center;
+}
+
+section > img {
+  width: 20%;
+  margin: 0 auto 5%;
+
+  display: block;
+}
+
+section > article {
+  font-weight: bold;
+}

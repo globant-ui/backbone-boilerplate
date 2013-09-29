@@ -1,8 +1,9 @@
 define(
   [
-    'backbone'
+    'backbone',
+    './modules/example/joke.view'
   ],
-  function(Backbone) {
+  function(Backbone, JokeView) {
 
     var Router = Backbone.Router.extend({
 
@@ -15,7 +16,7 @@ define(
       },
 
       handleDefaultRoute: function(path) {
-        console.log('Handle default route');
+        var jokeView = new JokeView();
       }
 
     });

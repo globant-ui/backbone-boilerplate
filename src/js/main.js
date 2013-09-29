@@ -5,6 +5,7 @@ require.config({
     'underscore' : 'vendor/lodash/dist/lodash',
     'modernizr' : 'vendor/modernizr/modernizr',
     'templateregistry' : 'app/templates',
+    'handlebars' : 'vendor/handlebars/handlebars'
   },
   shim: {
     'backbone': {
@@ -13,6 +14,9 @@ require.config({
     },
     'modernizr': {
       exports: 'Modernizr'
+    },
+    'handlebars': {
+      exports: 'Handlebars'
     }
   },
   waitSeconds: 30

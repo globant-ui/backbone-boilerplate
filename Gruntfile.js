@@ -47,7 +47,8 @@ module.exports = function(grunt) {
     // js linting options
     jshint: {
       all: ['Gruntfile.js', PATH_ASSETS_JS + '/**/*.js',
-        '!' + PATH_ASSETS_JS + '/vendor/**/*.js']
+        '!' + PATH_ASSETS_JS + '/vendor/**/*.js',
+        '!' + PATH_ASSETS_JS + '/app/templates.js']
     },
 
     handlebars: {
@@ -61,36 +62,7 @@ module.exports = function(grunt) {
           }
         },
         files: {
-          PATH_GENERATED_JST: PATH_ASSETS_JS + '/**/*.hbs'
-        }
-      }
-    },
-
-    jasmine: {
-      src: PATH_ASSETS_JS + '/app/**/*.js',
-      options: {
-        specs: PATH_ASSETS_JS + '/tests/**/*.spec.js',
-        template: require('grunt-template-jasmine-requirejs'),
-        templateOptions: {
-          requireConfig: {
-            baseUrl: './',
-            paths: {
-              'backbone' : PATH_ASSETS_JS + '/vendor/backbone/backbone',
-              'jquery' : PATH_ASSETS_JS + '/vendor/jquery/jquery',
-              'underscore' : PATH_ASSETS_JS + '/vendor/lodash/dist/lodash',
-              'modernizr' : PATH_ASSETS_JS + '/vendor/modernizr/modernizr',
-              'templateregistry' : PATH_ASSETS_JS + '/app/templates'
-            },
-            shim: {
-              'backbone': {
-                deps: ['underscore', 'jquery'],
-                exports: 'Backbone'
-              },
-              'modernizr': {
-                exports: 'Modernizr'
-              }
-            }
-          }
+          'src/js/app/templates.js': PATH_ASSETS_JS + '/**/*.hbs'
         }
       }
     },
@@ -164,15 +136,15 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-css');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-handlebars');
-  grunt.loadNpmTasks('grunt-contrib-jasmine');
+  // grunt.loadNpmTasks('grunt-contrib-jasmine');
 
   grunt.registerTask('default', 'build:dev');
 
-  grunt.registerTask('test', 'jasmine');
+  // grunt.registerTask('test', 'jasmine');
 
-  grunt.registerTask('build:prod', ['clean', 'jshint:all', 'jasmine',
-    'csslint:lax', 'handlebars', 'requirejs', 'concat', 'cssmin', 'imagemin']);
+  grunt.registerTask('build:prod', ['clean', 'jshint:all', 'handlebars',
+     'csslint:lax', 'requirejs', 'concat', 'cssmin', 'imagemin']);
 
-  grunt.registerTask('build:dev', ['clean', 'jshint:all', 'jasmine',
-    'handlebars', 'csslint:lax', 'copy', 'concat', 'cssmin']);
+  grunt.registerTask('build:dev', ['clean', 'jshint:all', 'handlebars',
+     'csslint:lax', 'copy', 'concat', 'cssmin']);
 };
