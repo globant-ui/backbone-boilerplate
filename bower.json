@@ -1,0 +1,18 @@
+{
+  "name": "backbone-boilerplate",
+  "version": "0.0.1",
+  "homepage": "https://github.com/globant-ui/backbone-boilerplate",
+  "authors": [
+    "eabait <estebanabait@gmail.com>"
+  ],
+  "description": "A project boilerplate for Backbone.js projects",
+  "license": "MIT",
+  "dependencies": {
+    "backbone": "1.0.0",
+    "jquery": "1.9.1",
+    "handlebars": "1.0.0",
+    "modernizr": "2.6.2",
+    "requirejs": "2.1.8",
+    "lodash": "2.1.0"
+  }
+}
