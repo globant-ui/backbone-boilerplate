@@ -6,7 +6,6 @@ module.exports = function(grunt) {
   var PATH_ASSETS_CSS = PATH_ASSETS + '/css';
   var PATH_ASSETS_IMG = PATH_ASSETS + '/img';
   var PATH_DEPLOY_ASSETS = 'public';
-  var PATH_GENERATED_JST = PATH_ASSETS_JS + '/app/templates.js';
 
   // ==========================================================================
   // Project configuration
@@ -64,6 +63,15 @@ module.exports = function(grunt) {
         files: {
           'src/js/app/templates.js': PATH_ASSETS_JS + '/**/*.hbs'
         }
+      }
+    },
+
+    karma: {
+      ci: {
+        configFile: 'karma.conf.js',
+        autoWatch: false,
+        singleRun: true,
+        browsers: ['PhantomJS']
       }
     },
 
@@ -136,15 +144,15 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-css');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-handlebars');
-  // grunt.loadNpmTasks('grunt-contrib-jasmine');
+  grunt.loadNpmTasks('grunt-karma');
 
   grunt.registerTask('default', 'build:dev');
 
-  // grunt.registerTask('test', 'jasmine');
+  grunt.registerTask('test', 'karma:ci');
 
-  grunt.registerTask('build:prod', ['clean', 'jshint:all', 'handlebars',
+  grunt.registerTask('build:prod', ['clean', 'jshint:all', 'handlebars', 'test',
      'csslint:lax', 'requirejs', 'concat', 'cssmin', 'imagemin']);
 
-  grunt.registerTask('build:dev', ['clean', 'jshint:all', 'handlebars',
+  grunt.registerTask('build:dev', ['clean', 'jshint:all', 'handlebars', 'test',
      'csslint:lax', 'copy', 'concat', 'cssmin']);
 };
