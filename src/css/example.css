@@ -2,28 +2,38 @@ body {
   background: #FB66A8;
 }
 
-h1 {
-  font-size: 1em;
-}
-
 section {
-  width: 50%;
-  margin: 10% auto 0;
-
-  color: #fff;
-
+  color: #FFF;
   font-family: Verdana, Arial, Helvetica, sans-serif;
-
+  margin: 10% auto 0;
   text-align: center;
+  width: 50%;
 }
 
 section > img {
-  width: 20%;
-  margin: 0 auto 5%;
-
   display: block;
+  margin: 0 auto 5%;
+  width: 200px;
 }
 
 section > article {
   font-weight: bold;
+}
+
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  section {
+    width: 100%;
+    padding: 0 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  section > img {
+    width: 150px;
+  }
 }

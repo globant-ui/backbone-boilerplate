@@ -69,7 +69,7 @@ module.exports = function(grunt) {
 
     concat: {
       css: {
-        src: [PATH_ASSETS_CSS + '/*.css'],
+        src: [PATH_ASSETS_CSS + '/normalize.css', PATH_ASSETS_CSS + '/*.css'],
         dest: PATH_DEPLOY_ASSETS +
           '/css/<%= pkg.name %>-<%= pkg.version %>.concat.css'
       }
