@@ -9,6 +9,7 @@ Status: beta
 1. Clone this repo
 2. bower install
 3. npm install
+4. run `Grunt`
 
 ## Development Dependencies
 * node.js v0.10.18
