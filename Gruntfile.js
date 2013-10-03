@@ -6,7 +6,6 @@ module.exports = function(grunt) {
   var PATH_ASSETS_CSS = PATH_ASSETS + '/css';
   var PATH_ASSETS_IMG = PATH_ASSETS + '/img';
   var PATH_DEPLOY_ASSETS = 'public';
-  var PATH_GENERATED_JST = PATH_ASSETS_JS + '/app/templates.js';
 
   // ==========================================================================
   // Project configuration
