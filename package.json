@@ -1,21 +1,18 @@
 {
   "name": "backbone-boilerplate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "start": "grunt test"
   },
+  "repository": "https://github.com/globant-ui/backbone-boilerplate.git",
   "devDependencies": {
-    "grunt": "~0.4.1",
+    "grunt": "~0.4.2",
     "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-jshint": "~0.6.4",
-    "grunt-contrib-requirejs": "~0.4.1",
+    "grunt-contrib-jshint": "~0.8.0",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-copy": "~0.4.1",
-    "grunt-contrib-imagemin": "~0.3.0",
-    "grunt-contrib-csslint": "~0.1.2",
+    "grunt-contrib-imagemin": "~0.5.0",
+    "grunt-contrib-csslint": "~0.2.0",
     "grunt-css": "~0.5.4",
-    "grunt-contrib-handlebars": "~0.5.11",
-    "grunt-contrib-jasmine": "~0.5.2",
-    "grunt-template-jasmine-requirejs": "~0.1.6"
+    "grunt-contrib-handlebars": "~0.6.1"
   }
 }
