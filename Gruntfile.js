@@ -103,31 +103,17 @@ module.exports = function(grunt) {
     },
 
     imagemin: {
-      png: {
+      dynamic: {
         options: {
-          optimizationLevel: 7
-        },
-        files: [
-          {
-            expand: true,
-            cwd: PATH_ASSETS + '/img',
-            src: ['**/*.png'],
-            dest: PATH_DEPLOY_ASSETS + '/img',
-            ext: '.png'
-          }
-        ]
-      },
-      jpg: {
-        options: {
+          optimizationLevel: 7,
           progressive: true
         },
         files: [
           {
             expand: true,
             cwd: PATH_ASSETS + '/img',
-            src: ['**/*.jpg'],
-            dest: PATH_DEPLOY_ASSETS + '/img',
-            ext: '.jpg'
+            src: ['**/*.{png, jpeg, gif}'],
+            dest: PATH_DEPLOY_ASSETS + '/img'
           }
         ]
       }
@@ -151,7 +137,7 @@ module.exports = function(grunt) {
   grunt.registerTask('test', 'karma:ci');
 
   grunt.registerTask('build:prod', ['clean', 'jshint:all', 'handlebars', 'test',
-     'csslint:lax', 'requirejs', 'concat', 'cssmin', 'imagemin']);
+     'csslint:lax', 'requirejs', 'concat', 'cssmin', 'imagemin:dynamic']);
 
   grunt.registerTask('build:dev', ['clean', 'jshint:all', 'handlebars', 'test',
      'csslint:lax', 'copy', 'concat', 'cssmin']);
