@@ -2,7 +2,7 @@
   "name": "backbone-boilerplate",
   "version": "0.2.0",
   "scripts": {
-    "start": "grunt test"
+    "start": "grunt build:prod"
   },
   "repository": "https://github.com/globant-ui/backbone-boilerplate.git",
   "devDependencies": {
