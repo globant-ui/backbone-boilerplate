@@ -98,13 +98,12 @@ module.exports = function(grunt) {
         options: {
           optimizationLevel: 7
         },
-        files: [
+        dynamic: [
           {
             expand: true,
             cwd: PATH_ASSETS + '/img',
             src: ['**/*.png'],
-            dest: PATH_DEPLOY_ASSETS + '/img',
-            ext: '.png'
+            dest: PATH_DEPLOY_ASSETS + '/img'
           }
         ]
       },
@@ -112,13 +111,12 @@ module.exports = function(grunt) {
         options: {
           progressive: true
         },
-        files: [
+        dynamic: [
           {
             expand: true,
             cwd: PATH_ASSETS + '/img',
             src: ['**/*.jpg'],
-            dest: PATH_DEPLOY_ASSETS + '/img',
-            ext: '.jpg'
+            dest: PATH_DEPLOY_ASSETS + '/img'
           }
         ]
       }
