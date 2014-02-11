@@ -15,6 +15,16 @@ module.exports = function(grunt) {
 
     clean: [PATH_DEPLOY_ASSETS],
 
+    bower: {
+      install: {
+        options: {
+           copy: false,
+           layout: 'byComponent',
+           install: true
+         }
+      }
+    },
+
     copy: {
       main: {
         expand: true,
@@ -133,12 +143,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-css');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-handlebars');
+  grunt.loadNpmTasks('grunt-bower-task');
 
   grunt.registerTask('default', 'build:dev');
 
-  grunt.registerTask('build:prod', ['clean', 'jshint:all', 'handlebars',
+  grunt.registerTask('build:prod', ['clean', 'bower', 'jshint:all', 'handlebars',
      'csslint:lax', 'requirejs', 'concat', 'cssmin', 'imagemin']);
 
-  grunt.registerTask('build:dev', ['clean', 'jshint:all', 'handlebars',
+  grunt.registerTask('build:dev', ['clean', 'bower', 'jshint:all', 'handlebars',
      'csslint:lax', 'copy', 'concat', 'cssmin']);
 };

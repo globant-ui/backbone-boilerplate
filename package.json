@@ -1,6 +1,6 @@
 {
   "name": "backbone-boilerplate",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "scripts": {
     "start": "grunt build:prod"
   },
@@ -15,6 +15,7 @@
     "grunt-contrib-imagemin": "~0.5.0",
     "grunt-contrib-csslint": "~0.2.0",
     "grunt-css": "~0.5.4",
-    "grunt-contrib-handlebars": "~0.6.1"
+    "grunt-contrib-handlebars": "~0.6.1",
+    "grunt-bower-task": "~0.3.4"
   }
 }
