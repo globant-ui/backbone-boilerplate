@@ -28,3 +28,7 @@ Fork the repo, do your changes, open a pull request
 * jQuery
 
 Testing, and test automation is yet to be decided. There is a branch called test-runner-karma with Jasmine tests automated using Karma.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/globant-ui/backbone-boilerplate/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
