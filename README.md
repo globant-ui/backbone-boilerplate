@@ -1,4 +1,4 @@
-Backbone-Boilerplate [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/globant-ui/backbone-boilerplate/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+Backbone-Boilerplate
 ====================
 
 A boilerplate for Backbone.js projects. This repo reflects current frontend best practices acquired from more than 20 BackboneJS/RequireJS projects at Globant.
