@@ -13,6 +13,7 @@
     "handlebars": "1.3.0",
     "modernizr": "2.7.1",
     "requirejs": "latest",
-    "lodash": "2.4.1"
+    "lodash": "2.4.1",
+    "normalize-css": "latest"
   }
 }
