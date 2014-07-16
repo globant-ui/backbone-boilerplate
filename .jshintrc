@@ -27,6 +27,7 @@
     // with different skill levels.
 
     "bitwise"       : true,     // Prohibit bitwise operators (&, |, ^, etc.).
+    "camelcase"     : true,    // true: Identifiers must be in camelCase
     "curly"         : true,     // Require {} for every new block or scope.
     "eqeqeq"        : true,     // Require triple equals i.e. `===`.
     "forin"         : true,     // Tolerate `for in` loops without `hasOwnPrototype`.
@@ -39,8 +40,19 @@
     "plusplus"      : false,    // Prohibit use of `++` & `--`.
     "regexp"        : true,     // Prohibit `.` and `[^...]` in regular expressions.
     "undef"         : true,     // Require all non-global variables be declared before they are used.
+    "unused"        : true,     // Prohibit declaring variables and not using them.
     "strict"        : true,     // Require `use strict` pragma in every file.
     "trailing"      : true,     // Prohibit trailing whitespaces.
+    "maxparams"     : false,    // {int} Max number of formal params allowed per function
+    "maxdepth"      : false,    // {int} Max depth of nested blocks (within functions)
+    "maxstatements" : false,    // {int} Max number statements per function
+    "maxcomplexity" : false,    // {int} Max cyclomatic complexity per function
+    "maxlen"        : 80,       // {int} Max number of characters per line
+    "quotmark"      : "single",   // Quotation mark consistency:
+                                  //    false    : do nothing (default)
+                                  //    true     : ensure whatever is used is consistent
+                                  //    "single" : require single quotes
+                                  //    "double" : require double quotes
 
     // == Relaxing Options ================================================
     //
@@ -112,8 +124,8 @@
     "maxerr"        : 100,      // Maximum errors before stopping.
     "predef"        : [         // Extra globals.
         "define",
-        "require"
+        "require",
+        "App"
     ],
     "indent"        : 2         // Specify indentation spacing
 }
-
