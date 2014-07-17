@@ -55,17 +55,21 @@ module.exports = function(grunt) {
 
     // js linting options
     jshint: {
-      all: ['Gruntfile.js', PATH_ASSETS_JS + '/**/*.js',
+      all: [
+        'Gruntfile.js', PATH_ASSETS_JS + '/**/*.js',
         '!' + PATH_ASSETS_JS + '/vendor/**/*.js',
-        '!' + PATH_ASSETS_JS + '/app/templates.js']
+        '!' + PATH_ASSETS_JS + '/app/templates.js'
+      ]
     },
 
     //Code Convention checking
     jscs: {
       files: {
-        src: ['Gruntfile.js', PATH_ASSETS_JS + '/**/*.js',
+        src: [
+          'Gruntfile.js', PATH_ASSETS_JS + '/**/*.js',
           '!' + PATH_ASSETS_JS + '/vendor/**/*.js',
-          '!' + PATH_ASSETS_JS + '/app/templates.js']
+          '!' + PATH_ASSETS_JS + '/app/templates.js'
+        ]
       },
       options: {
         config: '.jscsrc'
@@ -160,8 +164,10 @@ module.exports = function(grunt) {
   grunt.registerTask('default', 'build:dev');
 
   grunt.registerTask('build:prod', ['clean', 'bower', 'jshint:all', 'handlebars',
-    'csslint:lax', 'requirejs', 'concat', 'cssmin', 'imagemin']);
+    'csslint:lax', 'requirejs', 'concat', 'cssmin', 'imagemin'
+  ]);
 
   grunt.registerTask('build:dev', ['clean', 'bower', 'jshint:all', 'handlebars',
-    'csslint:lax', 'copy', 'concat', 'cssmin']);
+    'csslint:lax', 'copy', 'concat', 'cssmin'
+  ]);
 };
