@@ -1,0 +1,82 @@
+{
+  "requireCurlyBraces": [
+      "if",
+      "else",
+      "for",
+      "while",
+      "do",
+      "try",
+      "catch"
+  ],
+  "requireOperatorBeforeLineBreak": [
+    "?",
+    "=",
+    "==",
+    "===",
+    "!=",
+    "!==",
+    ">",
+    ">=",
+    "<",
+    "<="
+  ],
+  "requireCamelCaseOrUpperCaseIdentifiers": true,
+  "maximumLineLength": {
+    "value": 120,
+    "allowComments": true,
+    "allowRegex": true
+  },
+  "validateQuoteMarks": { "mark": "'", "escape": true },
+
+  "disallowMultipleLineStrings": true,
+  "requireMultipleVarDecl": "onevar",
+  "disallowMixedSpacesAndTabs": true,
+  "disallowTrailingWhitespace": true,
+  "disallowDanglingUnderscores": true,
+
+  "requireSpaceAfterKeywords": [
+    "if",
+    "else",
+    "for",
+    "while",
+    "do",
+    "switch",
+    "return",
+    "try",
+    "catch"
+  ],
+  "requireSpaceBeforeBinaryOperators": [
+      "=", "+=", "-=", "*=", "/=", "%=", "<<=", ">>=", ">>>=",
+      "&=", "|=", "^=", "+=",
+      "+", "-", "*", "/", "%", "<<", ">>", ">>>", "&",
+      "|", "^", "&&", "||", "===", "==", ">=",
+      "<=", "<", ">", "!=", "!=="
+  ],
+  "requireSpaceAfterBinaryOperators": true,
+  "requireSpacesInConditionalExpression": true,
+  "requireSpaceBeforeBlockStatements": true,
+  "requireLineFeedAtFileEnd": true,
+  "requireSpacesInFunctionExpression": {
+      "beforeOpeningCurlyBrace": true
+  },
+  "validateJSDoc": {
+      "checkParamNames": true,
+      "checkRedundantParams": true,
+      "requireParamTypes": true
+  },
+
+  "disallowMultipleLineBreaks": true,
+  "disallowEmptyBlocks": true,
+  "disallowKeywordsOnNewLine": ["else"],
+  "requireBlocksOnNewline": true,
+  "requireParenthesesAroundIIFE": true,
+  "validateLineBreaks": "LF",
+
+  "disallowKeywords": ["with"],
+  "disallowSpacesInsideObjectBrackets": null,
+  "disallowImplicitTypeConversion": ["string"],
+
+  "excludeFiles": [
+    "www/js/vendor/**"
+  ]
+}

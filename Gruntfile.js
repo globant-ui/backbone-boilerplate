@@ -1,11 +1,11 @@
 module.exports = function(grunt) {
   'use strict';
 
-  var PATH_ASSETS = 'src';
-  var PATH_ASSETS_JS = PATH_ASSETS + '/js';
-  var PATH_ASSETS_CSS = PATH_ASSETS + '/css';
-  var PATH_ASSETS_IMG = PATH_ASSETS + '/img';
-  var PATH_DEPLOY_ASSETS = 'public';
+  var PATH_ASSETS = 'src',
+      PATH_ASSETS_JS = PATH_ASSETS + '/js',
+      PATH_ASSETS_CSS = PATH_ASSETS + '/css',
+      PATH_ASSETS_IMG = PATH_ASSETS + '/img',
+      PATH_DEPLOY_ASSETS = 'public';
 
   // ==========================================================================
   // Project configuration
@@ -18,10 +18,10 @@ module.exports = function(grunt) {
     bower: {
       install: {
         options: {
-           copy: false,
-           layout: 'byComponent',
-           install: true
-         }
+          copy: false,
+          layout: 'byComponent',
+          install: true
+        }
       }
     },
 
@@ -60,6 +60,18 @@ module.exports = function(grunt) {
         '!' + PATH_ASSETS_JS + '/app/templates.js']
     },
 
+    //Code Convention checking
+    jscs: {
+      files: {
+        src: ['Gruntfile.js', PATH_ASSETS_JS + '/**/*.js',
+          '!' + PATH_ASSETS_JS + '/vendor/**/*.js',
+          '!' + PATH_ASSETS_JS + '/app/templates.js']
+      },
+      options: {
+        config: '.jscsrc'
+      }
+    },
+
     handlebars: {
       compile: {
         options: {
@@ -85,7 +97,7 @@ module.exports = function(grunt) {
     },
 
     cssmin: {
-      my_target: {
+      all: {
         src: PATH_DEPLOY_ASSETS +
           '/css/<%= pkg.name %>-<%= pkg.version %>.concat.css',
         dest: PATH_DEPLOY_ASSETS +
@@ -133,7 +145,6 @@ module.exports = function(grunt) {
     }
   });
 
-
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -144,12 +155,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-handlebars');
   grunt.loadNpmTasks('grunt-bower-task');
+  grunt.loadNpmTasks('grunt-jscs');
 
   grunt.registerTask('default', 'build:dev');
 
   grunt.registerTask('build:prod', ['clean', 'bower', 'jshint:all', 'handlebars',
-     'csslint:lax', 'requirejs', 'concat', 'cssmin', 'imagemin']);
+    'csslint:lax', 'requirejs', 'concat', 'cssmin', 'imagemin']);
 
   grunt.registerTask('build:dev', ['clean', 'bower', 'jshint:all', 'handlebars',
-     'csslint:lax', 'copy', 'concat', 'cssmin']);
+    'csslint:lax', 'copy', 'concat', 'cssmin']);
 };
